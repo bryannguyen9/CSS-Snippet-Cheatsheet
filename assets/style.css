@@ -1,0 +1,169 @@
+* {
+    /*//https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing*/
+    /*The box-sizing CSS property sets how the total width and height of an element is calculated.*/
+    /*The width and height properties include the content, padding, and border, but do not include the margin.*/
+    /*border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width. This typically makes it much easier to size elements.*/
+    box-sizing: border-box;
+    background-color: rgb(32, 71, 65);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    
+  }
+
+ 
+  body {
+    
+    margin: 0;
+    
+    
+  }
+  
+  header {
+    padding: 40px;
+    text-align: center;
+    background: rgb(32, 71, 65);
+    color: rgb(44, 248, 228);
+  }
+  
+  /* 
+  What happens when we set the display property to flex? 
+  TODO: Write your answer here 
+  when we set display property to flex we can do both inline and blcok depending on context
+  */
+  nav {
+    display: flex;
+    background-color: #d8a47f;
+  }
+  
+  nav a {
+    color: rgb(32, 71, 65);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  /*
+  background-image: linear-gradient(
+        rgba(rgba(160, 132, 238, 0.3) 0%,
+        rgba(rgba(160, 132, 238, 0.6) 100%)));
+  /* 
+
+  What is the flex-wrap property? 
+  TODO: Write your answer here 
+  wrap: flex items will wrap onto multiple lines, from top to bottom.
+  */
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  
+  aside {
+    flex: 1;
+    background-color: #b9c6ae;
+    padding: 80px;
+    text-align: center;
+  }
+  
+  
+  footer {
+    text-align: center;
+    color: #fff;
+    bottom: 10px;
+    right: 42%;
+    position: absolute;
+  }
+  
+  /* 
+  What does the justify-content property do? 
+  TODO: Write your answer here 
+  This defines the alignment along the main axis. 
+  It helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. 
+  It also exerts some control over the alignment of items when they overflow the line.
+  */
+  .products {
+    flex: 4;
+    
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* 
+  What is the flex property a shorthand property for?
+  What is it doing here? 
+  TODO: Write your answer here 
+  These are parameters for grow, shrink, and flex-basis
+  This means that the first #: controls proportions on how much it grows
+  second #: controls proportions on how much it shrinks
+  Third #: controls the rate at which it grows or shrinks
+  
+  In this case we have a default grow and shrink property and that it grows by 400px
+  */
+  .card {
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: white;
+    padding: 10px;
+    flex: 0 0 400px;
+    margin-block: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-image: linear-gradient(
+        (rgba(160, 132, 238, 0.3) 0%,
+        (rgba(160, 132, 238, 0.6) 100%))
+    );
+    
+  }
+  
+  .card header {
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: white;
+    
+  }
+  
+  .card p {
+    text-align: center;
+    border-style: 10px solid white;
+    color: rgb(44, 248, 228)
+    
+  }
+  
+  .card p + p {
+    width: 100%;
+    color: white;
+    font-family: monospace;
+    background-color: purple;
+    border-radius: 5px;
+    
+        padding: 20px;
+    text-align: left;
+  }
+  
+  /* 
+  What does the flex-direction property define?
+  What is it doing here? 
+  TODO: Write your answer here 
+  
+  Establishes main direction
+  default is left to right
+  row-reverse is right to left
+  column is top to bottom
+  column-reverse is bottom to top
+  
+  In this case we have column so we go from top to bottom
+  
+  */
+
+  @media screen and (max-width: 768px) {
+    main,
+    nav {
+      flex-direction: column;
+    }
+  }
+  
